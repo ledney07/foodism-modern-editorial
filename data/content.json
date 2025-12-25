@@ -1,0 +1,337 @@
+{
+  "site": {
+    "name": "Foodism CA",
+    "tagline": "Toronto's premier source for gastronomy, culture, and high-end lifestyle reporting. Since 2014.",
+    "description": "Get the best of Toronto's food scene delivered to your inbox every Thursday. Exclusive content, event invites, and more.",
+    "copyright": "© 2025 Foodism CA. Designed for Excellence."
+  },
+  "categories": [
+    {
+      "name": "2025 ICON Awards",
+      "slug": "icon-awards"
+    },
+    {
+      "name": "Festive Feasting",
+      "slug": "festive-feasting"
+    },
+    {
+      "name": "Eat & Drink",
+      "slug": "eat-drink"
+    },
+    {
+      "name": "Culture",
+      "slug": "culture"
+    },
+    {
+      "name": "Travel",
+      "slug": "travel"
+    },
+    {
+      "name": "Kitchen Essentials",
+      "slug": "kitchen-essentials"
+    },
+    {
+      "name": "Recipes",
+      "slug": "recipes"
+    },
+    {
+      "name": "Win",
+      "slug": "win"
+    },
+    {
+      "name": "Events",
+      "slug": "events"
+    },
+    {
+      "name": "Magazine",
+      "slug": "magazine"
+    },
+    {
+      "name": "Partnerships",
+      "slug": "partnerships"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Tono by Akira Back: A Masterclass in Modern Japanese Innovation",
+      "excerpt": "The Michelin-starred chef brings a new wave of sushi and sake to Torontos waterfront district.",
+      "content": "Akira Back is a name synonymous with culinary excellence. His latest venture, Tono, is no exception. Located in the heart of Toronto's burgeoning waterfront, Tono offers a sensory journey that defies traditional expectations of Japanese dining.\n\nThe space itself is a marvel of architectural design—think brutalist concrete meets soft, organic wood textures. As you step inside, the low-lit atmosphere immediately signals that you're in for something special.\n\nThe menu is a daring exploration of flavor. From the signature \"Tuna Pizza\" with truffle oil to the delicate \"Crispy Rice\" topped with spicy tuna, every dish is a testament to Back's unique ability to blend his Korean heritage with Japanese precision.\n\nWe sat down with Executive Chef Michael Chen to discuss the vision behind Tono. \"We wanted to create something that feels like a celebration,\" Chen explains. \"Every plate is a canvas, and every flavor is a note in a symphony.\"",
+      "author": "Elena Rossi",
+      "date": "February 24, 2025",
+      "category": "Eat & Drink",
+      "image": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1200",
+      "readTime": "6 min read",
+      "trending": true,
+      "tags": [
+        "Michelin Star",
+        "Japanese",
+        "Toronto",
+        "Fine Dining"
+      ],
+      "takeaways": [
+        "Focus on umami-driven small plates",
+        "Exclusive sake collection curated by local experts",
+        "Stunning brutalist interior design"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "The 2025 ICON Awards: Celebrating the Visionaries of Gastronomy",
+      "excerpt": "Our annual celebration of the chefs, producers, and artisans shaping the future of food.",
+      "content": "The 2025 ICON Awards stood as a beacon of excellence in an industry that has seen unprecedented change over the last year...",
+      "author": "James T. Sullivan",
+      "date": "February 20, 2025",
+      "category": "Culture",
+      "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200",
+      "readTime": "12 min read",
+      "tags": [
+        "Awards",
+        "Industry News",
+        "Visionaries"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Secret Wine Regions of the Niagara Escarpment",
+      "excerpt": "Beyond the main strip lies a collection of boutique vineyards producing world-class Rieslings.",
+      "content": "Niagara is often simplified, but the true gems lie hidden in the folds of the escarpment where the microclimate is unique...",
+      "author": "Sarah Jenkins",
+      "date": "February 18, 2025",
+      "category": "Travel",
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=1200",
+      "readTime": "8 min read",
+      "trending": true,
+      "tags": [
+        "Wine",
+        "Niagara",
+        "Local Travel"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Sustainability in the Modern Kitchen: More Than Just a Trend",
+      "excerpt": "How Toronto restaurants are tackling waste and sourcing responsibly in 2025.",
+      "content": "Sustainability is no longer a buzzword; it is a necessity for the survival of our culinary ecosystem...",
+      "author": "Mark Wood",
+      "date": "February 15, 2025",
+      "category": "Lifestyle",
+      "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1200",
+      "readTime": "5 min read",
+      "tags": [
+        "Sustainability",
+        "Eco-friendly",
+        "Restaurant News"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "The Art of Fermentation: Ancient Techniques for Modern Kitchens",
+      "excerpt": "Exploring the science and craft behind Toronto's best fermented foods.",
+      "content": "Fermentation is having a moment, but it's been a cornerstone of food preservation for thousands of years...",
+      "author": "Lisa Chen",
+      "date": "February 12, 2025",
+      "category": "Recipes",
+      "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&q=80&w=1200",
+      "readTime": "7 min read",
+      "tags": [
+        "Fermentation",
+        "Recipes",
+        "Food Science"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Toronto's Hidden Speakeasies: A Guide to the City's Best Secret Bars",
+      "excerpt": "From Prohibition-era cocktails to modern mixology, discover where the city's bartenders go to unwind.",
+      "content": "Toronto's cocktail scene has evolved dramatically, and nowhere is this more evident than in its speakeasies...",
+      "author": "Michael Torres",
+      "date": "February 10, 2025",
+      "category": "Eat & Drink",
+      "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200",
+      "readTime": "9 min read",
+      "trending": true,
+      "tags": [
+        "Cocktails",
+        "Bars",
+        "Toronto Nightlife"
+      ]
+    }
+  ],
+  "sections": {
+    "mustReads": {
+      "title": "Must Reads",
+      "description": "Trending articles and featured content"
+    },
+    "foodismSelects": {
+      "title": "Foodism Selects",
+      "description": "Curated picks from our editorial team"
+    },
+    "theDigest": {
+      "title": "The Digest",
+      "description": "Recent arrivals in gastronomy & culture."
+    },
+    "travelGuide": {
+      "title": "Weekend in the Valley",
+      "badge": "The Great Escape",
+      "description": "Beyond the vineyards, find the hidden artisans of the Niagara bench. A curated map of taste, history, and horizon.",
+      "linkText": "Read Travel Guide"
+    },
+    "newsletter": {
+      "title": "Stay in the loop.",
+      "fullTitle": "Experience the Golden Standard.",
+      "description": "Get the best of toronto food scene delivered to your inbox every Thursday.",
+      "fullDescription": "Get premium guides, curated wine maps, and early access to toronto most exclusive tables.",
+      "buttonText": "Join Now",
+      "fullButtonText": "Get Premium Access",
+      "pricing": "Starts at $9.99/mo",
+      "privacy": "By subscribing, you agree to our privacy policy. No spam, unsubscribe anytime."
+    },
+    "joinCommunity": {
+      "title": "Join Our Community",
+      "description": "Get the best of Toronto's food scene delivered to your inbox every Thursday. Exclusive content, event invites, and more.",
+      "buttonText": "Subscribe",
+      "privacy": "By subscribing, you agree to our privacy policy. No spam, unsubscribe anytime."
+    },
+    "iconAwards": {
+      "title": "The 2025 ICON Awards: Nomination stage is now open.",
+      "buttonText": "Cast Your Vote"
+    }
+  },
+  "footer": {
+    "links": {
+      "discover": {
+        "title": "Discover",
+        "items": [
+          {
+            "label": "Eat & Drink",
+            "href": "#eat-drink"
+          },
+          {
+            "label": "Travel Guides",
+            "href": "#travel"
+          },
+          {
+            "label": "Kitchen Essentials",
+            "href": "#kitchen-essentials"
+          },
+          {
+            "label": "2025 ICON Awards",
+            "href": "#icon-awards"
+          }
+        ]
+      },
+      "company": {
+        "title": "Company",
+        "items": [
+          {
+            "label": "Our Story",
+            "href": "#"
+          },
+          {
+            "label": "Contact & Support",
+            "href": "#"
+          },
+          {
+            "label": "Advertise with Us",
+            "href": "#"
+          },
+          {
+            "label": "Privacy & Legal",
+            "href": "#"
+          }
+        ]
+      },
+      "legal": {
+        "items": [
+          {
+            "label": "Accessibility",
+            "href": "#"
+          },
+          {
+            "label": "Cookie Policy",
+            "href": "#"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "#"
+          }
+        ]
+      }
+    }
+  },
+  "authors": [
+    {
+      "id": "elena-rossi",
+      "name": "Elena Rossi",
+      "slug": "elena-rossi",
+      "bio": "Elena Rossi is Foodism CA's lead food critic and dining editor, specializing in fine dining and culinary innovation across Toronto. With over a decade of experience covering the city's restaurant scene, Elena brings a discerning palate and deep knowledge of international cuisines to every review.",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
+      "role": "Food Critic & Dining Editor",
+      "social": {
+        "twitter": "@elenarossi",
+        "instagram": "@elenarossi_food"
+      }
+    },
+    {
+      "id": "james-sullivan",
+      "name": "James T. Sullivan",
+      "slug": "james-sullivan",
+      "bio": "James T. Sullivan is the Editor-in-Chief of Foodism CA, bringing decades of experience in food journalism and cultural reporting. His work focuses on the intersection of food, culture, and society, with a particular interest in industry trends and culinary awards.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+      "role": "Editor-in-Chief",
+      "social": {
+        "twitter": "@jamestsullivan",
+        "instagram": "@jamestsullivan"
+      }
+    },
+    {
+      "id": "sarah-jenkins",
+      "name": "Sarah Jenkins",
+      "slug": "sarah-jenkins",
+      "bio": "Sarah Jenkins is Foodism CA's travel and lifestyle editor, exploring culinary destinations across Ontario and beyond. Her writing captures the essence of local food scenes, from hidden gems in Niagara wine country to the latest food trends in urban centers.",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400",
+      "role": "Travel & Lifestyle Editor",
+      "social": {
+        "twitter": "@sarahjtravels",
+        "instagram": "@sarahjtravels"
+      }
+    },
+    {
+      "id": "mark-wood",
+      "name": "Mark Wood",
+      "slug": "mark-wood",
+      "bio": "Mark Wood covers sustainability, restaurant operations, and the business of food for Foodism CA. With a background in environmental journalism, Mark examines how the culinary industry is adapting to meet modern challenges while maintaining excellence.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
+      "role": "Sustainability & Business Reporter",
+      "social": {
+        "twitter": "@markwoodfood",
+        "instagram": "@markwoodfood"
+      }
+    },
+    {
+      "id": "lisa-chen",
+      "name": "Lisa Chen",
+      "slug": "lisa-chen",
+      "bio": "Lisa Chen is Foodism CA's recipe developer and food science writer. With a background in culinary arts and food chemistry, Lisa demystifies cooking techniques and explores the science behind our favorite dishes, from fermentation to modern molecular gastronomy.",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=400",
+      "role": "Recipe Developer & Food Science Writer",
+      "social": {
+        "twitter": "@lisachencooks",
+        "instagram": "@lisachencooks"
+      }
+    },
+    {
+      "id": "michael-torres",
+      "name": "Michael Torres",
+      "slug": "michael-torres",
+      "bio": "Michael Torres is Foodism CA's drinks editor and cocktail culture specialist. His expertise spans wine, craft cocktails, and beverage trends, with a passion for uncovering Toronto's best bars and the stories behind the city's most innovative drink programs.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+      "role": "Drinks Editor & Cocktail Specialist",
+      "social": {
+        "twitter": "@michaeltorres",
+        "instagram": "@michaeltorres_drinks"
+      }
+    }
+  ]
+}

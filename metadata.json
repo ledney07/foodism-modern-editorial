@@ -1,0 +1,8 @@
+{
+  "name": "Food-ism Modern Editorial",
+  "description": "A high-end, editorial-style lifestyle publication platform inspired by Food-ism CA, featuring high-contrast typography, masonry grids, and AI-powered foodie insights.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

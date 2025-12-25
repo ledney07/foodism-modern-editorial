@@ -1,0 +1,16 @@
+# Google App Engine Configuration
+runtime: nodejs18
+env: standard
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+env_variables:
+  NODE_ENV: production
+  PORT: 8080
+
+vpc_access_connector:
+  name: projects/YOUR_PROJECT_ID/locations/us-central1/connectors/YOUR_CONNECTOR_NAME
+

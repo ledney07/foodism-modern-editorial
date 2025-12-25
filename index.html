@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodism Modern Editorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      .font-serif {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Reveal Animation Styles */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hero Reveal - Animates on page load */
+      .reveal-hero {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-hero.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive reveal-hero: reveal on mobile, reveal-hero on desktop */
+      .reveal-hero-desktop {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal-hero-desktop.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Transition delay utilities */
+      .delay-0 {
+        transition-delay: 0ms;
+      }
+      .delay-40 {
+        transition-delay: 40ms;
+      }
+      .delay-80 {
+        transition-delay: 80ms;
+      }
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+      .delay-200 {
+        transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
+      }
+      .delay-400 {
+        transition-delay: 400ms;
+      }
+
+      /* Prevent flash on page load - hide closed overlays initially */
+      /* Use opacity and transform for smooth transitions */
+      .fixed.inset-0.invisible {
+        visibility: hidden;
+      }
+
+      .fixed.inset-0.visible {
+        visibility: visible;
+      }
+
+      /* Ensure menu overlay items don't animate when menu is closed */
+      /* Only apply to elements inside closed overlays, not page content */
+      .fixed.inset-0.invisible .reveal,
+      .fixed.inset-0.invisible .reveal-hero {
+        opacity: 0 !important;
+      }
+
+      /* Smooth overlay transitions */
+      .fixed.inset-0 {
+        transition-property: transform, opacity, visibility;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 700ms;
+      }
+
+      /* Ensure page content with reveal classes are visible initially */
+      .reveal,
+      .reveal-hero {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      /* Custom Logo Font Styling matching screenshot */
+      .logo-text {
+        font-family: "Playfair Display", serif;
+        letter-spacing: -0.06em;
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      /* Precise Drop Cap alignment fix */
+      .article-drop-cap::first-letter {
+        float: left;
+        font-family: "Playfair Display", serif;
+        font-size: 5rem;
+        font-weight: 900;
+        line-height: 0.85;
+        margin-top: 0.12em; /* Adjusted to sit higher */
+        margin-right: 0.15em;
+        margin-bottom: -0.1em;
+        color: #171717;
+        font-style: normal;
+      }
+
+      /* Global hover transition */
+      a,
+      button,
+      svg {
+        transition: all 0.3s ease;
+      }
+
+      /* Signature Yellow Hover utility */
+      .hover-yellow:hover {
+        color: #f9b233 !important;
+      }
+
+      /* Custom scrollbar for high-end look */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4d4d4;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f9b233;
+      }
+
+      /* Hide scrollbar for carousel */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.2.3",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+          "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body
+    class="bg-white text-neutral-900 selection:bg-[#f9b233] selection:text-black"
+  >
+    <div id="root"></div>
+    <script>
+      // Hero reveals - activate on page load
+      const activateHeroReveals = () => {
+        const heroReveals = document.querySelectorAll(".reveal-hero");
+        heroReveals.forEach((el) => {
+          el.classList.add("active");
+        });
+        
+        // Also activate elements with reveal-hero-desktop class on desktop only
+        const isDesktop = window.innerWidth >= 1024;
+        if (isDesktop) {
+          const desktopHeroReveals = document.querySelectorAll(".reveal-hero-desktop");
+          desktopHeroReveals.forEach((el) => {
+            el.classList.add("active");
+          });
+        }
+      };
+
+      // Regular reveals - activate on scroll
+      const reveal = () => {
+        const reveals = document.querySelectorAll(".reveal");
+        const isDesktop = window.innerWidth >= 1024; // lg breakpoint
+        
+        for (let i = 0; i < reveals.length; i++) {
+          const element = reveals[i];
+
+          // Skip if already active
+          if (element.classList.contains("active")) {
+            continue;
+          }
+
+          // Skip elements with reveal-hero-desktop on desktop (they animate on page load, not scroll)
+          if (isDesktop && element.classList.contains("reveal-hero-desktop")) {
+            continue;
+          }
+
+          // Skip elements that are hidden or inside hidden overlays
+          const rect = element.getBoundingClientRect();
+          const computedStyle = window.getComputedStyle(element);
+
+          // Only check for overlay parents if it's a fixed inset-0 element (actual overlay)
+          const parentOverlay = element.closest(".fixed.inset-0");
+          const isInHiddenOverlay =
+            parentOverlay &&
+            parentOverlay.classList.contains("-translate-y-full") &&
+            !parentOverlay.classList.contains("translate-y-0");
+
+          // Check if element or parent is hidden (but allow opacity 0 for reveal animation)
+          if (
+            computedStyle.display === "none" ||
+            computedStyle.visibility === "hidden" ||
+            isInHiddenOverlay
+          ) {
+            continue;
+          }
+
+          const windowHeight = window.innerHeight;
+          const elementTop = rect.top;
+          const elementVisible = 100;
+          if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("active");
+          }
+        }
+      };
+
+      // Activate hero reveals on page load with a small delay for smooth animation
+      const initHeroAnimations = () => {
+        setTimeout(() => {
+          activateHeroReveals();
+        }, 100);
+      };
+
+      // Wait for React to fully render before initializing animations
+      const initAnimations = () => {
+        // Wait for React to render, then activate animations
+        const checkAndInit = () => {
+          const rootElement = document.getElementById("root");
+          if (rootElement && rootElement.children.length > 0) {
+            // React has rendered, now activate animations
+            setTimeout(() => {
+              initHeroAnimations();
+              // Trigger reveal check multiple times to catch all elements
+              reveal();
+              setTimeout(reveal, 100);
+              setTimeout(reveal, 300);
+            }, 100);
+          } else {
+            // React not ready yet, check again
+            setTimeout(checkAndInit, 50);
+          }
+        };
+        checkAndInit();
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initAnimations);
+      } else {
+        initAnimations();
+      }
+
+      window.addEventListener("scroll", reveal);
+
+      // Also check on hash change (for React Router-like navigation)
+      window.addEventListener("hashchange", () => {
+        setTimeout(() => {
+          reveal();
+          activateHeroReveals();
+        }, 300);
+      });
+    </script>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

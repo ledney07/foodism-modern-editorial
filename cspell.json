@@ -1,0 +1,41 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "pgpool",
+    "postgresql",
+    "pghost",
+    "pgport",
+    "pgdatabase",
+    "pguser",
+    "pgpassword",
+    "pgsslmode",
+    "mongoose",
+    "mongodb",
+    "vercel",
+    "oidc",
+    "aws",
+    "aurora",
+    "rds",
+    "iam",
+    "arn",
+    "signer",
+    "hostname",
+    "foodism",
+    "attachdatabasepool",
+    "awscredentialsprovider",
+    "getauthtoken",
+    "poolconfig",
+    "idletimeout",
+    "connectiontimeout",
+    "rejectunauthorized"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "*.lock",
+    "*.log",
+    ".git/**"
+  ]
+}

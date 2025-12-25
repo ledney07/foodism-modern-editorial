@@ -1,0 +1,30 @@
+service: foodism-api
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    DB_HOST: ${ssm:/foodism/db/host}
+    DB_PASSWORD: ${ssm:/foodism/db/password}
+    DB_NAME: foodism_db
+    NODE_ENV: production
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+      - http:
+          path: /
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline
+
