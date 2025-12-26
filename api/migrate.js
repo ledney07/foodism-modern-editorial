@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Vercel serverless function handler
 export default async function handler(req, res) {
   // Simple auth check (in production, use proper authentication)
   if (req.method !== 'POST') {
@@ -13,14 +14,17 @@ export default async function handler(req, res) {
   }
 
   // Optional: Add a secret key for security
-  const authKey = req.headers['x-auth-key'];
-  if (authKey !== process.env.MIGRATE_SECRET_KEY) {
+  const authKey = req.headers['x-auth-key'] || req.headers['X-Auth-Key'];
+  const secretKey = process.env.MIGRATE_SECRET_KEY;
+  
+  if (secretKey && authKey !== secretKey) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
   try {
+    console.log('🔄 Starting database migrations...');
     await connectDatabase();
-    const pool = getClient();
+    const pool = await getClient();
 
     // Read schema.sql
     const schemaPath = path.join(__dirname, '../server/src/db/schema.sql');
@@ -31,16 +35,16 @@ export default async function handler(req, res) {
     await pool.query(schema);
     console.log('✅ Database migrations completed successfully!');
 
-    res.status(200).json({ 
+    return res.status(200).json({ 
       success: true, 
       message: 'Database migrations completed successfully!' 
     });
   } catch (error) {
     console.error('❌ Error running migrations:', error);
-    res.status(500).json({ 
+    return res.status(500).json({ 
       error: 'Migration failed', 
-      message: error.message 
+      message: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 }
-

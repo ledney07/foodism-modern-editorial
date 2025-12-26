@@ -6,20 +6,24 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Vercel serverless function handler
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   // Optional: Add a secret key for security
-  const authKey = req.headers['x-auth-key'];
-  if (authKey !== process.env.MIGRATE_SECRET_KEY) {
+  const authKey = req.headers['x-auth-key'] || req.headers['X-Auth-Key'];
+  const secretKey = process.env.MIGRATE_SECRET_KEY;
+  
+  if (secretKey && authKey !== secretKey) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
   try {
+    console.log('🌱 Starting database seeding...');
     await connectDatabase();
-    const pool = getClient();
+    const pool = await getClient();
 
     // Read content.json
     const contentPath = path.join(__dirname, '../data/content.json');
@@ -67,16 +71,16 @@ export default async function handler(req, res) {
     }
     console.log(`✅ Seeded ${seededCount} articles`);
 
-    res.status(200).json({ 
+    return res.status(200).json({ 
       success: true, 
       message: `Seeded ${content.categories.length} categories and ${seededCount} articles` 
     });
   } catch (error) {
     console.error('❌ Error seeding database:', error);
-    res.status(500).json({ 
+    return res.status(500).json({ 
       error: 'Seeding failed', 
-      message: error.message 
+      message: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 }
-
